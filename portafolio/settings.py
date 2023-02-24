@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'core',
     'portfolio.apps.PortfolioConfig',
     'about',
+    'contact',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import os
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Email settings
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'ea404a49aaf410'
+EMAIL_HOST_PASSWORD = '91584121f86665'
+EMAIL_PORT = '465'
