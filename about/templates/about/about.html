@@ -1,0 +1,150 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+Sobre Mi
+{% endblock title %}
+
+{% block image-header %} about {% endblock image-header %}
+
+{% block title-header %}
+<div>
+    <h1 class="display-4 fw-bold">Diego Mendez</h1>
+</div>
+<div>
+    <h3 class="fs-2">Desarrollador Web</h3>
+</div>
+{% endblock title-header %}
+
+{% block content %}
+
+{% load static %}
+<div class="row d-flex">
+    <div class="col-4 offset-md-auto">
+        <img class="img-fluid img-thumbnail img-circle img-perfil " src={% static 'core/img/foto-perfil.png' %} alt="">
+    </div>
+    <div class="col-6">
+        <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit temporibus distinctio expedita enim,
+            libero pariatur aliquam ullam molestiae debitis eos nobis at ipsa eveniet cum officiis fuga incidunt eius
+            ex?</h4>
+    </div>
+</div>
+
+<div class="row d-flex pt-5">
+    <div class="col-12">
+        <h2 class="fw-bold">Formación Académica</h2>
+
+        {% for course in courses %}
+
+
+        <h3>{{ course.title }}</h3>
+        <p><strong>Título obtenido:</strong> {{ course.degree_title }}</p>
+        <p><strong>Descripción:</strong> {{ course.description }}</p>
+        
+        {% if course.link %}
+        <p><a href="{{ course.link }}">Ver Certificado</a></p>
+        {% else %}
+        <p><a>En desarrollo...</a></p>
+        {% endif %}
+        <hr>
+        {% endfor %}
+        <br>
+
+        <h2 class="fw-bold">Conocimientos</h2>
+        <section class="skills" id="skills">
+            <div class="skills__container" id="skills">
+
+                {% for skill in skills %}
+
+
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={{ skill.image.url }} alt="html5">
+                    </div>
+
+                    <div class="skill__texto">
+                        <p class="skill__titulo">{{ skill.title }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- 
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/javascript-svgrepo-com.svg' %} alt="html5">
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">Javascript</p>
+                    </div>
+                </div>
+
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/nodejs-icon-svgrepo-com.svg' %} alt="html5">
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">NodeJS</p>
+                    </div>
+                </div>
+
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/css3-svgrepo-com.svg' %} alt="html5">
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">CSS3</p>
+                    </div>
+                </div>
+
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/bootstrap-svgrepo-com.svg' %} alt="html5">
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">Bootstrap</p>
+                    </div>
+                </div>
+
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/laravel-svgrepo-com.svg' %} alt="html5">
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">Laravel</p>
+                    </div>
+                </div>
+
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/php-svgrepo-com.svg' %} alt="html5">
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">PHP</p>
+                    </div>
+                </div>
+
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/mysql-svgrepo-com.svg' %} alt="html5">
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">MySQL</p>
+                    </div>
+                </div>
+
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/postgresql-logo-svgrepo-com.svg' %} alt="html5">
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">PostgreSQL</p>
+                    </div>
+                </div> -->
+
+            </div>
+        </section>
+        </section>
+    </div>
+
+</div>
+
+
+{% endblock %}
